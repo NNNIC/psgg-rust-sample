@@ -72,13 +72,6 @@ pub mod hoge_control {
         //             psggConverterLib.dll converted from psgg-file:hoge_control.psgg
 
         m_cnt: i32,
-
-
-
-
-
-
-
         m_loopindex : i32,
 
 
@@ -98,20 +91,12 @@ pub mod hoge_control {
                 //             psggConverterLib.dll converted from psgg-file:hoge_control.psgg
 
                 m_cnt: 0,
-
-
-
-
-
-
-
                 m_loopindex: 0,
 
 
                 //    [STATEGO OUTPUT END] 
             }
         }
-
         pub fn run(&mut self) {
             println!("@run");
             self.start();

@@ -316,8 +316,8 @@ n018=100017
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/05/31 11:50:46
-; * pssgEditor version : 0.64.65347.9a06832c09c6c0ad3e18f8476b073017fef0c06d
+; The setting was created automatically. 2020/05/31 22:04:42
+; * pssgEditor version : 0.64.60298.no hash because of debug
 psggfile=@@@
 hoge_control.psgg
 @@@
@@ -334,7 +334,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-init,Saved
+init,Initilized
 @@@
 target_pathdir=@@@
 /
@@ -349,7 +349,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":52,"y":114}},{"Key":"S_END","Value":{"x":1893,"y":154}},{"Key":"S_0001","Value":{"x":176,"y":106}},{"Key":"S_0002","Value":{"x":906,"y":73}},{"Key":"S_0003","Value":{"x":1126,"y":73}},{"Key":"S_0004","Value":{"x":1448,"y":40}},{"Key":"S_0005","Value":{"x":1462,"y":268}},{"Key":"S_GSB000","Value":{"x":248,"y":425}},{"Key":"S_SBS000","Value":{"x":691,"y":442}},{"Key":"S_0006","Value":{"x":844,"y":442}},{"Key":"S_RET000","Value":{"x":1093,"y":442}},{"Key":"S_GSB001","Value":{"x":448,"y":295}},{"Key":"S_LOP000","Value":{"x":287,"y":594}},{"Key":"S_SBS001","Value":{"x":746,"y":734}},{"Key":"S_0007","Value":{"x":899,"y":734}},{"Key":"S_RET001","Value":{"x":1148,"y":734}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":52,"y":114}},{"Key":"S_END","Value":{"x":1893,"y":154}},{"Key":"S_0001","Value":{"x":176,"y":106}},{"Key":"S_0002","Value":{"x":906,"y":73}},{"Key":"S_0003","Value":{"x":1126,"y":73}},{"Key":"S_0004","Value":{"x":1448,"y":40}},{"Key":"S_0005","Value":{"x":1462,"y":268}},{"Key":"S_SBS000","Value":{"x":691,"y":442}},{"Key":"S_0006","Value":{"x":844,"y":442}},{"Key":"S_RET000","Value":{"x":1093,"y":442}},{"Key":"S_GSB001","Value":{"x":448,"y":295}},{"Key":"S_LOP000","Value":{"x":287,"y":594}},{"Key":"S_SBS001","Value":{"x":746,"y":734}},{"Key":"S_0007","Value":{"x":899,"y":734}},{"Key":"S_RET001","Value":{"x":1148,"y":734}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -607,13 +607,9 @@ else { self.goto( State::{%1} ); }
 >>>
 @@@
 
-#def_members=@@@
-[[members]]
-@@@
+#def_members=[[members]]
 
-#ini_members=@@@
-[[members_init]]
-@@@
+#ini_members=[[members_init]]
 
 #matches=@@@
 State::[[state]] => self.[[state]](),
