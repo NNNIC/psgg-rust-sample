@@ -8,7 +8,7 @@ pub mod hoge_control {
     const MAX_CALL_STACK: usize = 10;
 
     #[derive(PartialEq,Clone,Copy)]
-    enum State {
+    pub enum State {
         #[allow(non_camel_case_types)]
         None,
         //    [STATEGO OUTPUT START] indent(8) $/^S_/->#enums$
@@ -124,23 +124,23 @@ pub mod hoge_control {
             println!("@exit");
         }
 
-        fn start(&mut self) {
+        pub fn start(&mut self) {
             self.m_next = State::S_START;
         }
-        fn is_end(&self) -> bool {
+        pub fn is_end(&self) -> bool {
             return self.m_cur == State::S_END;
         }
-        fn goto(&mut self, s : State) {
+        pub fn goto(&mut self, s : State) {
             self.m_next = s;
         }
-        fn has_next(&self) -> bool {
+        pub fn has_next(&self) -> bool {
             self.m_next != State::None
         }
-        fn no_wait(&mut self) {
+        pub fn no_wait(&mut self) {
             self.m_nowait = true;
         }
 
-        fn update(&mut self) {
+        pub fn update(&mut self) {
             loop {
                 self.m_nowait = false;
                 self.m_first = false;
