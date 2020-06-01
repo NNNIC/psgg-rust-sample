@@ -53,9 +53,17 @@ pub mod hoge_control {
         //    [STATEGO OUTPUT END]
     }
 
-    //    [STATEGO OUTPUT START] indent(4) $/^E_/$ 
+    //    [STATEGO OUTPUT START] indent(4) $/^E_/->#ins_embed$
     //             psggConverterLib.dll converted from psgg-file:hoge_control.psgg
 
+    /*
+        E_0000
+        generate random number
+    */
+    fn rand(n: i32) -> i32 {
+       let mut rng = rand::thread_rng();
+       return rng.gen_range(0,n+1);
+    }
 
 
     //    [STATEGO OUTPUT END] 
@@ -362,9 +370,6 @@ pub mod hoge_control {
 
         //    [STATEGO OUTPUT END]
     }
-    fn rand(n: i32) -> i32 {
-        let mut rng = rand::thread_rng();
-        return rng.gen_range(0,n+1);
-    }
+
 
 }

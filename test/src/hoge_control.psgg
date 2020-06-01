@@ -13,9 +13,9 @@ check_excel_writable=no
 
 sheet=state-chart
 nameid_list=,n001,n002,n003,n004,n019,n005,,n01e,n006,,n007,n01f,,n008,n009,n00a,n00b,,n00c,n00d,,n00e,n00f,,n010,n011,,n012,n013,n014,n015,,n01a,,n01b,n01c,n01d,n016,n017,n018,,,,,,
-stateid_list=,,,,s0001,s0002,s000d,s0003,s000f,s0010,,s0012,s0013,s0014,s0015,s0016,s0017,s000e,s0019,s0018
+stateid_list=,,,,s0001,s0002,s000d,s0003,s000f,s0010,s001a,s0012,s0013,s0014,s0015,s0016,s0017,s000e,s0019,s0018
 max_name_id=31
-max_state_id=25
+max_state_id=26
 [id_name_dic]
 n001=thumbnail
 n002=state
@@ -66,6 +66,7 @@ s0016=S_LOP000
 s0017=S_SBS001
 s0018=S_0007
 s0019=S_RET001
+s001a=E_0000
 
 
 [s0001]
@@ -309,6 +310,26 @@ The root
 n017=1148,734
 n018=100017
 
+[s001a]
+n001=(bitmap)
+n002=E_0000
+n003=generate random number
+n006=@@@
+fn rand(n: i32) -> i32 {
+   let mut rng = rand::thread_rng();
+   return rng.gen_range(0,n+1);
+}
+@@@
+
+n016=@@@
+/
+(100,100)
+
+@@@
+
+n017=99,884
+n018=100018
+
 
 
 ------#======*<Guid(70C5A739-223A-457D-8AEE-1A0E2050D5AE)>*======#------
@@ -316,8 +337,8 @@ n018=100017
 sheet=config
 
 ###VARIOUS-CONTENTS-BEGIN###
-; The setting was created automatically. 2020/05/31 22:04:42
-; * pssgEditor version : 0.64.60298.no hash because of debug
+; The setting was created automatically. 2020/06/01 21:52:03
+; * pssgEditor version : 0.64.66138.9cfd0ba8dabb5427d38d2b497d34132f6e040a10
 psggfile=@@@
 hoge_control.psgg
 @@@
@@ -334,7 +355,7 @@ c_thumbnail=1
 c_contents=1
 force_display_outpin=0
 last_action=@@@
-init,Initilized
+init,Saved
 @@@
 target_pathdir=@@@
 /
@@ -349,7 +370,7 @@ nodegroup_pos_list=@@@
 [{"Key":"\/","Value":{"x":100,"y":100}}]
 @@@
 fillter_state_location_list=@@@
-[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":52,"y":114}},{"Key":"S_END","Value":{"x":1893,"y":154}},{"Key":"S_0001","Value":{"x":176,"y":106}},{"Key":"S_0002","Value":{"x":906,"y":73}},{"Key":"S_0003","Value":{"x":1126,"y":73}},{"Key":"S_0004","Value":{"x":1448,"y":40}},{"Key":"S_0005","Value":{"x":1462,"y":268}},{"Key":"S_SBS000","Value":{"x":691,"y":442}},{"Key":"S_0006","Value":{"x":844,"y":442}},{"Key":"S_RET000","Value":{"x":1093,"y":442}},{"Key":"S_GSB001","Value":{"x":448,"y":295}},{"Key":"S_LOP000","Value":{"x":287,"y":594}},{"Key":"S_SBS001","Value":{"x":746,"y":734}},{"Key":"S_0007","Value":{"x":899,"y":734}},{"Key":"S_RET001","Value":{"x":1148,"y":734}}]}]
+[{"Key":"\/","Value":[{"Key":"S_START","Value":{"x":52,"y":114}},{"Key":"S_END","Value":{"x":1893,"y":154}},{"Key":"S_0001","Value":{"x":176,"y":106}},{"Key":"S_0002","Value":{"x":906,"y":73}},{"Key":"S_0003","Value":{"x":1126,"y":73}},{"Key":"S_0004","Value":{"x":1448,"y":40}},{"Key":"S_0005","Value":{"x":1462,"y":268}},{"Key":"S_SBS000","Value":{"x":691,"y":442}},{"Key":"S_0006","Value":{"x":844,"y":442}},{"Key":"S_RET000","Value":{"x":1093,"y":442}},{"Key":"S_GSB001","Value":{"x":448,"y":295}},{"Key":"S_LOP000","Value":{"x":287,"y":594}},{"Key":"S_SBS001","Value":{"x":746,"y":734}},{"Key":"S_0007","Value":{"x":899,"y":734}},{"Key":"S_RET001","Value":{"x":1148,"y":734}},{"Key":"E_0000","Value":{"x":99,"y":884}}]}]
 @@@
 linecolor_data=@@@
 [{"color":{"knownColor":0,"name":null,"state":2,"value":4285493103},"pattern":"BACKTO_"}]
@@ -425,6 +446,8 @@ sheet=template-statefunc
 <<<?state/^C_/
 eof>>>
 <<<?state/^E_/
+    <<<?embed
+    >>>
 eof>>>
 
 
@@ -617,7 +640,14 @@ State::[[state]] => self.[[state]](),
 State::[[state]]_LoopCheckAndGosub____ => self.[[state]]_LoopCheckAndGosub____(),
 State::[[state]]_LoopNext____          => self.[[state]]_LoopNext____(),
 >>>
+@@@
 
+#ins_embed=@@@
+/*
+    [[state]]
+    [[state-cmt]]
+*/
+[[embed]]
 @@@
 
 [jpn]
